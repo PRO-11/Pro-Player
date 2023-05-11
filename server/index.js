@@ -1,16 +1,16 @@
 import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
-import userRoutes from "./api/user.js"
-import authRoutes from "./api/auth.js"
-import videoRoutes from "./api/video.js"
-import commentRoutes from "./api/comment.js"
+import userRoutes from "./Routes/user.js"
+import authRoutes from "./Routes/auth.js"
+import videoRoutes from "./Routes/video.js"
+import commentRoutes from "./Routes/comment.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 import path from "path"
 import { fileURLToPath } from 'url';
-
 dotenv.config()
+
 const app=express()
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
