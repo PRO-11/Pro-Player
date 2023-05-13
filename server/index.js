@@ -1,6 +1,7 @@
+import dotenv from "dotenv"
+dotenv.config()
 import express from "express"
 import mongoose from "mongoose"
-import dotenv from "dotenv"
 import userRoutes from "./Routes/user.js"
 import authRoutes from "./Routes/Auth/auth.js"
 import videoRoutes from "./Routes/video.js"
@@ -9,7 +10,8 @@ import cookieParser from "cookie-parser"
 import cors from "cors"
 import path from "path"
 import { fileURLToPath } from 'url';
-dotenv.config()
+import  connectToMongo  from './db.js'
+connectToMongo();
 
 const app=express()
 const __filename = fileURLToPath(import.meta.url);
@@ -45,7 +47,6 @@ app.use((err,req,res,next)=>{
     })
 })
 
-console.log(path.resolve(__dirname,'build'))
 
 
 
@@ -60,6 +61,6 @@ if(process.env.NODE_ENV=='production'){
 
 const PORT=process.env.PORT||5000
 app.listen(PORT,()=>{
-    connect()
+    // connect()
     console.log("Server is running on port 8081")
 })
