@@ -1,6 +1,6 @@
 import  express  from "express";
 import { googleAuth, signin, signup} from "./controllers/auth.js";
-import User from "../models/User.js"
+import User from "./models/User.js"
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 const router =express.Router();
