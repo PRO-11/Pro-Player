@@ -2,11 +2,13 @@ import  express  from "express";
 import { googleAuth, signin, signup} from "../controllers/auth.js";
 import User from "../../Models/User.js"
 import bcrypt from "bcryptjs"
+import connectToMongo from "../../db.js";
 import jwt from "jsonwebtoken"
 const router =express.Router();
 
 //Signup
 router.post("/signup",async(req,res)=>{
+    connectToMongo()
     const salt=bcrypt.genSaltSync(10)
     const hash=bcrypt.hashSync(req.body.password,salt)
     console.log(req.body)
