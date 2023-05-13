@@ -1,6 +1,6 @@
 import { createError } from "../../error.js";
-import User from  "../../Models/user.js"
-import Video from "../../Models/Video.js";
+import User from  "../../models/user.js"
+import Video from "../../models/Video.js";
 export const addVideo = async (req, res, next) => {
   const newVideo = new Video({ userId: req.user.id, ...req.body });
   try {
