@@ -1,6 +1,6 @@
 import { createError } from "../../error.js"
-import Comment from "../Models/Comment.js"
-import Video from "../Models/Video.js"
+import Comment from "../../Models/Comment.js"
+import Video from "../../Models/Video.js"
 
 export const addComment=async(req,res,next)=>{
     const newcomment=new Comment({...req.body,userId:req.user.id})
