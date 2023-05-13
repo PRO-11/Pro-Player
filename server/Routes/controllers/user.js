@@ -1,5 +1,5 @@
 import { createError } from "../../error.js"
-import User from "../../Models/User.js"
+import User from "../../Models/user.js"
 import Video from "../../Models/Video.js"
 export const update=async(req,res,next)=>{
    

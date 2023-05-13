@@ -1,6 +1,6 @@
 import  express  from "express";
 import { googleAuth, signin, signup} from "../controllers/auth.js";
-import User from "../../Models/User.js"
+import User from "../../Models/user.js"
 import bcrypt from "bcryptjs"
 import connectToMongo from "../../db.js";
 import jwt from "jsonwebtoken"
