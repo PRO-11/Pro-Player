@@ -14,8 +14,8 @@ import  connectToMongo  from './db.js'
 connectToMongo();
 
 const app=express()
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const connect=()=>{
   mongoose.connect(process.env.MONGO).then(()=>{
@@ -50,14 +50,14 @@ app.use((err,req,res,next)=>{
 
 
 
-if(process.env.NODE_ENV=='production'){
+// if(process.env.NODE_ENV=='production'){
   
-  console.log("Serve file")
-  app.get('/',(req,res)=>{
-    app.use(express.static(path.resolve(__dirname,'frrontend','build')))
-    res.sendFile(path.resolve(__dirname,'frrontend','build','index.html'))
-})
-}
+//   console.log("Serve file")
+//   app.get('/',(req,res)=>{
+//     app.use(express.static(path.resolve(__dirname,'frrontend','build')))
+//     res.sendFile(path.resolve(__dirname,'frrontend','build','index.html'))
+// })
+// }
 
 const PORT=process.env.PORT||5000
 app.listen(PORT,()=>{
