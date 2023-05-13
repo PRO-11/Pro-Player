@@ -1,6 +1,6 @@
 import { createError } from "../../error.js"
-import User from "../models/User.js"
-import Video from "../models/Video.js"
+import User from "../Models/User.js"
+import Video from "../Models/Video.js"
 export const update=async(req,res,next)=>{
    
     if(req.params.id==req.user.id)
